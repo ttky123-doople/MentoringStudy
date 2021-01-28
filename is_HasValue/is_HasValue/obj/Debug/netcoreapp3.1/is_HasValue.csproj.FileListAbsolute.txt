@@ -1,0 +1,13 @@
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.exe
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.deps.json
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.runtimeconfig.json
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.runtimeconfig.dev.json
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.dll
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\bin\Debug\netcoreapp3.1\is_HasValue.pdb
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.csprojAssemblyReference.cache
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.AssemblyInfoInputs.cache
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.AssemblyInfo.cs
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.csproj.CoreCompileInputs.cache
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.dll
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.pdb
+C:\Users\ttky3\source\repos\is_HasValue\is_HasValue\obj\Debug\netcoreapp3.1\is_HasValue.genruntimeconfig.cache

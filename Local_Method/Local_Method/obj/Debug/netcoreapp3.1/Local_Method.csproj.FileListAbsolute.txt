@@ -1,0 +1,13 @@
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.exe
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.deps.json
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.runtimeconfig.json
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.runtimeconfig.dev.json
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.dll
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\bin\Debug\netcoreapp3.1\Local_Method.pdb
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.csprojAssemblyReference.cache
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.AssemblyInfoInputs.cache
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.AssemblyInfo.cs
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.csproj.CoreCompileInputs.cache
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.dll
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.pdb
+C:\Users\ttky3\source\repos\Local_Method\Local_Method\obj\Debug\netcoreapp3.1\Local_Method.genruntimeconfig.cache

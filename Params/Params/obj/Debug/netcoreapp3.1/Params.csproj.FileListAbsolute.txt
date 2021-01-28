@@ -1,0 +1,12 @@
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.exe
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.deps.json
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.runtimeconfig.json
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.runtimeconfig.dev.json
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.dll
+C:\Users\ttky3\source\repos\Params\Params\bin\Debug\netcoreapp3.1\Params.pdb
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.AssemblyInfoInputs.cache
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.AssemblyInfo.cs
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.csproj.CoreCompileInputs.cache
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.dll
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.pdb
+C:\Users\ttky3\source\repos\Params\Params\obj\Debug\netcoreapp3.1\Params.genruntimeconfig.cache
