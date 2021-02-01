@@ -1,0 +1,13 @@
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.exe
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.deps.json
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.runtimeconfig.json
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.runtimeconfig.dev.json
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.dll
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\bin\Debug\netcoreapp3.1\TypeCast_Class.pdb
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.csprojAssemblyReference.cache
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.AssemblyInfoInputs.cache
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.AssemblyInfo.cs
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.csproj.CoreCompileInputs.cache
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.dll
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.pdb
+C:\Users\ttky3\source\repos\TypeCast_Class\TypeCast_Class\obj\Debug\netcoreapp3.1\TypeCast_Class.genruntimeconfig.cache
