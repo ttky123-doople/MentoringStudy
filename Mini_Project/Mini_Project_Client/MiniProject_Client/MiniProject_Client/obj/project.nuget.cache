@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FO5JsvEoRQYSurY5I6WvVC+njNjIFkjTKISt+Cw0wzBjCHDj1Seb/EhlaAj5ixPSha130zG/kXR50SBN/cM9sQ==",
+  "dgSpecHash": "zpZpQC8laI8SOWpoPMq/fVyM9EiVjuInNJoFmEoEMK55fifsvtLlXzPfsIlJaVylB1ypHvgGdx6ZwkTewTKZhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ttky3\\source\\repos\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
+  "projectFilePath": "C:\\Users\\ttky3\\Documents\\git\\MentoringStudy\\Mini_Project\\Mini_Project_Client\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
     "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",

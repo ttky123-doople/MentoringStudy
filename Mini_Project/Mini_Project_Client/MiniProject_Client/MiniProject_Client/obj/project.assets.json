@@ -360,11 +360,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ttky3\\source\\repos\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
+      "projectUniqueName": "C:\\Users\\ttky3\\Documents\\git\\MentoringStudy\\Mini_Project\\Mini_Project_Client\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
       "projectName": "MiniProject_Client",
-      "projectPath": "C:\\Users\\ttky3\\source\\repos\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
+      "projectPath": "C:\\Users\\ttky3\\Documents\\git\\MentoringStudy\\Mini_Project\\Mini_Project_Client\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
       "packagesPath": "C:\\Users\\ttky3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ttky3\\source\\repos\\MiniProject_Client\\MiniProject_Client\\obj\\",
+      "outputPath": "C:\\Users\\ttky3\\Documents\\git\\MentoringStudy\\Mini_Project\\Mini_Project_Client\\MiniProject_Client\\MiniProject_Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"

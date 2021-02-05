@@ -38,6 +38,8 @@ namespace MiniProject_Client
             selfIp = GetSelfIP();
             while (true)
             {
+                Console.ReadKey();
+                Console.Clear();
                 Console.WriteLine("==========MiniProject_Client==========");
                 Console.WriteLine("1.서버연결");
                 Console.WriteLine("2.Message 보내기");
@@ -306,9 +308,6 @@ namespace MiniProject_Client
                 byte[] receiveByte = new byte[1024];
                 client.GetStream().Read(receiveByte, 0, receiveByte.Length);
                 recvMessage = Encoding.Default.GetString(receiveByte, 0, receiveByte.Length);
-                //Console.Clear();
-                //Console.WriteLine(recvMessage);
-                //Console.ReadKey();
                 #region XmlParsing
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(recvMessage);
