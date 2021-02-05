@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Text;
+using System.IO;
 
 using StudentInfo;
 using Commands;
@@ -17,12 +18,12 @@ namespace ServerXmlNs
         Socket clientSocket;
         IPEndPoint iPEndPoint;
 
-        string ClientIP;
+        string clientIP;
         string port;
         string command;
-        string StudentNum;
-        string PhoneNum;
-        string StudentName;
+        string studentNum;
+        string phoneNum;
+        string studentName;
         Command commandExe;
 
         public ServerXml() { commandExe = new Command(); }
@@ -34,7 +35,7 @@ namespace ServerXmlNs
                 data = data.Replace(" ","");
                 int startP = data.IndexOf("<IP>") + 4;
                 int endP = data.IndexOf("</IP>") - startP;
-                ClientIP = data.Substring(startP, endP);
+                clientIP = data.Substring(startP, endP);
 
                 startP = data.IndexOf("<Port>") + 6;
                 endP = data.IndexOf("</Port>") - startP;
@@ -46,27 +47,26 @@ namespace ServerXmlNs
 
                 startP = data.IndexOf("<Number>") + 8;
                 endP = data.IndexOf("</Number>", startP) - startP;
-                StudentNum = data.Substring(startP, endP);
+                studentNum = data.Substring(startP, endP);
 
                 startP = data.IndexOf("<Phone>") + 7;
                 endP = data.IndexOf("</Phone>", startP) - startP;
-                PhoneNum = data.Substring(startP, endP);
+                phoneNum = data.Substring(startP, endP);
 
                 startP = data.IndexOf("<Name>") + 6;
                 endP = data.IndexOf("</Name>", startP) - startP;
-                StudentName = data.Substring(startP, endP);
+                studentName = data.Substring(startP, endP);
 
-                //Console.WriteLine(ClientIP + " " + port + " " + command + " " + StudentNum + " " + PhoneNum + " " + StudentName);
+                Console.WriteLine(clientIP + " " + port + " command: " + command + " studentNum: " + studentNum + " phoneNum: " + phoneNum + " studentName: " + studentName);
             } catch (ArgumentOutOfRangeException e)
             {
-                throw e;
+                Console.WriteLine(e.Message);
             }
 
             Student student = new Student();
-            student.name = StudentName;
-            student.phone_num = PhoneNum;
-            student.number = StudentNum;
-            commandExe.Read();
+            student.name = studentName;
+            student.phoneNum = phoneNum;
+            student.number = studentNum;
             if (command.Equals("Update")) ResponseXml(commandExe.Update(student));
             else if (command.Equals("Create")) ResponseXml(commandExe.Create(student));
             else if (command.Equals("Delete")) ResponseXml(commandExe.Delete(student));
@@ -97,17 +97,17 @@ namespace ServerXmlNs
                     SendData += "CommandFallout";
                     break;
             }
-            SendData += "</Reponse></Root>";
+            SendData += "</Response></Root>";
             SendData = SendData.Replace(" ", "");
             byte[] data = System.Text.Encoding.Default.GetBytes(SendData);
             networkStream.Write(data, 0, data.Length);
         }
         public void ResponseAllXml(List<Student>students)
         {
-            string SendData = "<Root><Response>StudentsList</Reponse><Data>";
+            string SendData = "<Root><Response>StudentsList</Response><Data>";
             foreach (Student student in students)
             {
-                SendData += "<Student><Number>" + student.number + "</Number><Phone>" + student.phone_num +
+                SendData += "<Student><Number>" + student.number + "</Number><Phone>" + student.phoneNum +
                     "</Phone><Name>" + student.name + "</Name></Student>";
             }
             SendData += "</Data></Root>";
@@ -118,6 +118,7 @@ namespace ServerXmlNs
         }
         public void ServerStarted()
         {
+            Console.WriteLine(commandExe.GetList());
             TcpListener tcpListener = new TcpListener(IPAddress.Any, 6000);
             tcpListener.Start();
             Task ServerStart = Task.Run(() =>
@@ -127,15 +128,17 @@ namespace ServerXmlNs
                 networkStream = tcpClient.GetStream();
                 clientSocket = tcpClient.Client;
                 iPEndPoint = (IPEndPoint)clientSocket.RemoteEndPoint;
-                int length;
-                string data = null;
-                byte[] bytes = new byte[9999];
+                byte[] bytes = new byte[1024];
                 while (true)
                 {
+                    int length = 0;
+                    string data = null;
                     while ((length = networkStream.Read(bytes, 0, bytes.Length)) != 0)
                     {
+                        Console.WriteLine("Reading");
                         data = Encoding.Default.GetString(bytes, 0, length);
                         DataParsing(data);
+                        break;
                     };
                 }
             });

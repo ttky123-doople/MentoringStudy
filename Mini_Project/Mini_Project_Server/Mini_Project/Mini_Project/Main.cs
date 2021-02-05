@@ -5,7 +5,7 @@ using System.Text;
 using StudentInfo;
 using ServerXmlNs;
 
-namespace Mini_Project
+namespace MiniProject
 {
     class MainApp
     {
@@ -14,10 +14,6 @@ namespace Mini_Project
             bool stop = false;
             ServerXml serverXml = new ServerXml();
             serverXml.ServerStarted();
-            /*foreach (Student student in students)
-            {
-                Console.WriteLine(student.name + " " + student.phone_num + " " + student.number);
-            }*/
             while (!stop)
             {
                 try

@@ -12,10 +12,11 @@ namespace Commands
     //Linq로 재작성
     class Command
     {
-        List<Student> students = new List<Student>();
+        public List<Student> students{ get;set; }
         private TxtReadWrite txtReadWrite;
         public Command()
         {
+            students = new List<Student>();
             txtReadWrite = new TxtReadWrite();
         }
         public int Create(Student newStudent)
@@ -48,7 +49,7 @@ namespace Commands
                 if (student.number.Equals(newStudent.number))
                 {
                     students[index].name = newStudent.name;
-                    students[index].phone_num = newStudent.phone_num;
+                    students[index].phoneNum = newStudent.phoneNum;
                     txtReadWrite.WriteTxt(students);
                     Console.WriteLine("Update() Success");
                     return 4;
@@ -63,6 +64,11 @@ namespace Commands
             txtReadWrite.ReadTxt(students);
             Console.WriteLine("Read() Success");
             return students;
+        }
+        public string GetList()
+        {
+            txtReadWrite.ReadTxt(students);
+            return "GetList() Success";
         }
     }
 }
