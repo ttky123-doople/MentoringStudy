@@ -31,7 +31,7 @@ namespace ServerXmlNs
         {
             try
             {
-                data.Trim();
+                data = data.Replace(" ","");
                 int startP = data.IndexOf("<IP>") + 4;
                 int endP = data.IndexOf("</IP>") - startP;
                 ClientIP = data.Substring(startP, endP);
@@ -56,7 +56,7 @@ namespace ServerXmlNs
                 endP = data.IndexOf("</Name>", startP) - startP;
                 StudentName = data.Substring(startP, endP);
 
-                Console.WriteLine(ClientIP + " " + port + " " + command + " " + StudentNum + " " + PhoneNum + " " + StudentName);
+                //Console.WriteLine(ClientIP + " " + port + " " + command + " " + StudentNum + " " + PhoneNum + " " + StudentName);
             } catch (ArgumentOutOfRangeException e)
             {
                 throw e;
@@ -66,7 +66,7 @@ namespace ServerXmlNs
             student.name = StudentName;
             student.phone_num = PhoneNum;
             student.number = StudentNum;
-
+            commandExe.Read();
             if (command.Equals("Update")) ResponseXml(commandExe.Update(student));
             else if (command.Equals("Create")) ResponseXml(commandExe.Create(student));
             else if (command.Equals("Delete")) ResponseXml(commandExe.Delete(student));
@@ -85,14 +85,20 @@ namespace ServerXmlNs
                     SendData += "Removal Success";
                     break;
                 case 3:
-                    SendData += "Removal Fail: No number";
+                    SendData += "Removal Fail: NoNumber";
                     break;
                 case 4:
                     SendData += "Update Success";
                     break;
+                case 5:
+                    SendData += "Update Fail: NoData";
+                    break;
+                default:
+                    SendData += "CommandFallout";
+                    break;
             }
             SendData += "</Reponse></Root>";
-            SendData.Trim();
+            SendData = SendData.Replace(" ", "");
             byte[] data = System.Text.Encoding.Default.GetBytes(SendData);
             networkStream.Write(data, 0, data.Length);
         }
@@ -105,8 +111,10 @@ namespace ServerXmlNs
                     "</Phone><Name>" + student.name + "</Name></Student>";
             }
             SendData += "</Data></Root>";
+            SendData = SendData.Replace(" ", "");
             byte[] data = System.Text.Encoding.Default.GetBytes(SendData);
             networkStream.Write(data, 0,data.Length);
+            Console.WriteLine("ResponseAllXml() Success");
         }
         public void ServerStarted()
         {

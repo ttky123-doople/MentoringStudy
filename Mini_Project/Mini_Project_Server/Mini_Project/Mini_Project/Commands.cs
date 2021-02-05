@@ -21,6 +21,8 @@ namespace Commands
         public int Create(Student newStudent)
         {
             students.Add(newStudent);
+            txtReadWrite.AddWriteTxt(newStudent);
+            Console.WriteLine("Addition Success");
             return 1;
         }
         public int Delete(Student newStudent)
@@ -30,9 +32,12 @@ namespace Commands
                 if (student.number.Equals(newStudent.number))
                 {
                     students.Remove(student);
+                    txtReadWrite.WriteTxt(students);
+                    Console.WriteLine("Removal Success");
                     return 2;
                 }
             }
+            Console.WriteLine("Removal Fail");
             return 3;
         }
         public int Update(Student newStudent)
@@ -44,15 +49,19 @@ namespace Commands
                 {
                     students[index].name = newStudent.name;
                     students[index].phone_num = newStudent.phone_num;
+                    txtReadWrite.WriteTxt(students);
+                    Console.WriteLine("Update() Success");
                     return 4;
                 }
                 index++;
             }
+            Console.WriteLine("Update() Fail");
             return 5;
         }
         public List<Student> Read()
         {
             txtReadWrite.ReadTxt(students);
+            Console.WriteLine("Read() Success");
             return students;
         }
     }

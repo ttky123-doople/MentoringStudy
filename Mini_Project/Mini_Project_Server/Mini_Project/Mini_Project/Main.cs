@@ -9,7 +9,6 @@ namespace Mini_Project
 {
     class MainApp
     {
-        static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
             bool stop = false;
