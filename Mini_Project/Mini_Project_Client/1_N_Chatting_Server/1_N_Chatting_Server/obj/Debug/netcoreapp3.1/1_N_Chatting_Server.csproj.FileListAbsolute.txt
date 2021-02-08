@@ -1,0 +1,13 @@
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.exe
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.deps.json
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.runtimeconfig.json
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.runtimeconfig.dev.json
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.dll
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\bin\Debug\netcoreapp3.1\1_N_Chatting_Server.pdb
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.csprojAssemblyReference.cache
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.AssemblyInfoInputs.cache
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.AssemblyInfo.cs
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.csproj.CoreCompileInputs.cache
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.dll
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.pdb
+C:\Users\ttky3\source\repos\1_N_Chatting_Server\1_N_Chatting_Server\obj\Debug\netcoreapp3.1\1_N_Chatting_Server.genruntimeconfig.cache

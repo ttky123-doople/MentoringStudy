@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "zpZpQC8laI8SOWpoPMq/fVyM9EiVjuInNJoFmEoEMK55fifsvtLlXzPfsIlJaVylB1ypHvgGdx6ZwkTewTKZhw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ttky3\\Documents\\git\\MentoringStudy\\Mini_Project\\Mini_Project_Client\\MiniProject_Client\\MiniProject_Client\\MiniProject_Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.0\\microsoft.extensions.configuration.binder.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.0.0\\microsoft.extensions.dependencyinjection.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.logging\\3.0.0\\microsoft.extensions.logging.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.0\\microsoft.extensions.logging.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\nlog\\4.7.7\\nlog.4.7.7.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\nlog.extensions.logging\\1.7.0\\nlog.extensions.logging.1.7.0.nupkg.sha512",
+    "C:\\Users\\ttky3\\.nuget\\packages\\nlog.schema\\4.7.7\\nlog.schema.4.7.7.nupkg.sha512"
+  ],
+  "logs": []
+}
