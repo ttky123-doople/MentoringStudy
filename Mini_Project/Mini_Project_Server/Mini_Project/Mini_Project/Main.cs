@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using StudentInfo;
 using ServerXmlNs;
 
 namespace MiniProject
 {
-    class MainApp
+    public class MainApp
     {
         static void Main(string[] args)
         {

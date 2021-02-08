@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 
 using StudentInfo;
 
 namespace TxtReadWriteNs
 {
-    class TxtReadWrite
+    public class TxtReadWrite
     {
         private static string currentDirectory = Environment.CurrentDirectory;
         public void ReadTxt(List<Student> students)

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Xml.Linq;
 
@@ -10,7 +9,7 @@ using TxtReadWriteNs;
 namespace Commands
 {
     //Linq로 재작성
-    class Command
+    public class Command
     {
         public List<Student> students{ get;set; }
         private TxtReadWrite txtReadWrite;

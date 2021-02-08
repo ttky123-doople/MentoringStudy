@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StudentInfo
+﻿namespace StudentInfo
 {
-    class Student
+    public class Student
     {
         public string number { get; set; }
         public string phoneNum { get; set; }

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
-using System.Text;
 using System.IO;
+using System.Xml.Serialization;
 
 using StudentInfo;
 using Commands;
+using System.Text;
 
 namespace ServerXmlNs
 {
-    class ServerXml
+    public class ServerXml
     {
         TcpClient tcpClient;
         NetworkStream networkStream;
@@ -25,40 +26,26 @@ namespace ServerXmlNs
         string phoneNum;
         string studentName;
         Command commandExe;
+        ResponseMsg.Root rootResponseMsg;
+        
+        public ServerXml() { commandExe = new Command();
+            rootResponseMsg = new ResponseMsg.Root();
+        }
 
-        public ServerXml() { commandExe = new Command(); }
-
-        public void DataParsing(string data)
+        public void DataParsing(RequestMsg.Root data)
         {
             try
             {
-                data = data.Replace(" ","");
-                int startP = data.IndexOf("<IP>") + 4;
-                int endP = data.IndexOf("</IP>") - startP;
-                clientIP = data.Substring(startP, endP);
-
-                startP = data.IndexOf("<Port>") + 6;
-                endP = data.IndexOf("</Port>") - startP;
-                port = data.Substring(startP, endP);
-
-                startP = data.IndexOf("<Command>") + 9;
-                endP = data.IndexOf("</Command>", startP) - startP;
-                command = data.Substring(startP, endP);
-
-                startP = data.IndexOf("<Number>") + 8;
-                endP = data.IndexOf("</Number>", startP) - startP;
-                studentNum = data.Substring(startP, endP);
-
-                startP = data.IndexOf("<Phone>") + 7;
-                endP = data.IndexOf("</Phone>", startP) - startP;
-                phoneNum = data.Substring(startP, endP);
-
-                startP = data.IndexOf("<Name>") + 6;
-                endP = data.IndexOf("</Name>", startP) - startP;
-                studentName = data.Substring(startP, endP);
+                clientIP = data.Client.IP;
+                port = data.Client.Port;
+                command = data.Content.Command;
+                studentNum = data.Content.Data.Student.Number;
+                phoneNum = data.Content.Data.Student.Phone;
+                studentName = data.Content.Data.Student.Name;
 
                 Console.WriteLine(clientIP + " " + port + " command: " + command + " studentNum: " + studentNum + " phoneNum: " + phoneNum + " studentName: " + studentName);
-            } catch (ArgumentOutOfRangeException e)
+            }
+            catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -75,45 +62,49 @@ namespace ServerXmlNs
         }
         public void ResponseXml(int num)
         {
-            string SendData = "<Root><Response>";
+            string sendData = "";
             switch (num)
             {
                 case 1:
-                    SendData += "Addition Success";
+                    sendData += "Addition Success";
                     break;
                 case 2:
-                    SendData += "Removal Success";
+                    sendData += "Removal Success";
                     break;
                 case 3:
-                    SendData += "Removal Fail: NoNumber";
+                    sendData += "Removal Fail: NoNumber";
                     break;
                 case 4:
-                    SendData += "Update Success";
+                    sendData += "Update Success";
                     break;
                 case 5:
-                    SendData += "Update Fail: NoData";
+                    sendData += "Update Fail: NoData";
                     break;
                 default:
-                    SendData += "CommandFallout";
+                    sendData += "Command Fallout";
                     break;
             }
-            SendData += "</Response></Root>";
-            SendData = SendData.Replace(" ", "");
-            byte[] data = System.Text.Encoding.Default.GetBytes(SendData);
-            networkStream.Write(data, 0, data.Length);
+
+            rootResponseMsg.response = sendData;
+            XmlSerializer serializer = new XmlSerializer(typeof(ResponseMsg.Root));
+            serializer.Serialize(networkStream, rootResponseMsg);
+            Console.WriteLine("ResponseXml() Success");
         }
-        public void ResponseAllXml(List<Student>students)
+        public void ResponseAllXml(List<Student> students)
         {
-            string SendData = "<Root><Response>StudentsList</Response><Data>";
+            ResponseList.Root rootResponseList = new ResponseList.Root();
+            rootResponseList.Response = "Students List";
+
             foreach (Student student in students)
             {
-                SendData += "<Student><Number>" + student.number + "</Number><Phone>" + student.phoneNum +
-                    "</Phone><Name>" + student.name + "</Name></Student>";
+                ResponseList.Student tempStudent = new ResponseList.Student();
+                tempStudent.Name = student.name;
+                tempStudent.Number = student.number;
+                tempStudent.Phone = student.phoneNum;
+                rootResponseList.Data.Student.Add(tempStudent);
             }
-            SendData += "</Data></Root>";
-            SendData = SendData.Replace(" ", "");
-            byte[] data = System.Text.Encoding.Default.GetBytes(SendData);
-            networkStream.Write(data, 0,data.Length);
+            XmlSerializer serializer = new XmlSerializer(typeof(ResponseList.Root));
+            serializer.Serialize(networkStream, rootResponseList);
             Console.WriteLine("ResponseAllXml() Success");
         }
         public void ServerStarted()
@@ -137,7 +128,10 @@ namespace ServerXmlNs
                     {
                         Console.WriteLine("Reading");
                         data = Encoding.Default.GetString(bytes, 0, length);
-                        DataParsing(data);
+                        XmlSerializer serializer = new XmlSerializer(typeof(RequestMsg.Root));
+                        StringReader reader = new StringReader(data);
+                        RequestMsg.Root responseMsg = (RequestMsg.Root)serializer.Deserialize(reader);
+                        DataParsing(responseMsg);
                         break;
                     };
                 }
