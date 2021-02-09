@@ -8,6 +8,6 @@ namespace ResponseMsg
 	{
 
 		[XmlElement(ElementName = "Response")]
-		public string response { get; set; }
+		public string Response { get; set; }
 	}
 }
