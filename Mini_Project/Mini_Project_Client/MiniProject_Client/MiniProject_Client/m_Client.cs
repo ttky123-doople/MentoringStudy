@@ -10,7 +10,7 @@ using System.Collections.Concurrent;
 
 namespace MiniProject_Client
 {
-    class Client
+    class m_Client
     {
         TcpClient client = null;
         string ServerIp = "";
@@ -22,7 +22,7 @@ namespace MiniProject_Client
         ConcurrentBag<string> sentMsgBag;
         ConcurrentBag<string> rcvMsgBag;
         string port;
-        public Client(string ip, string port)
+        public m_Client(string ip, string port)
         {
             receiveThread = new Thread(ReceiveMessage);
             client = new TcpClient();
@@ -129,20 +129,23 @@ namespace MiniProject_Client
                         }
                     case 1:
                         {
-                            Student tmp = new Student();
+                            //Student tmp = new Student();
                             command = "Create";
                             Console.Write("Name: ");
-                            tmp.Name = Console.ReadLine();
+                            inputName = Console.ReadLine();
+                            //tmp.Name = Console.ReadLine();
                             Console.Write("Phone: ");
-                            tmp.Phone = Console.ReadLine();
+                            inputPhone = Console.ReadLine();
+                            //tmp.Phone = Console.ReadLine();
                             Console.Write("Number: ");
-                            tmp.Number = Console.ReadLine();
+                            inputNum = Console.ReadLine();
+                            //tmp.Number = Console.ReadLine();
                             XmlSerializer xs = new XmlSerializer(typeof(Student));
 
 
-                            xs.Serialize(client.GetStream(), tmp);
-                            client.GetStream().Flush();
-
+                            //xs.Serialize(client.GetStream(), tmp);
+                            //client.GetStream().Flush();
+                            //return;
                             message = @"<?xml version=""1.0"" encoding=""utf - 8""?>
 <Root>
 <Client>
@@ -241,10 +244,10 @@ namespace MiniProject_Client
                 return;
             }
 
-            //byte[] msgByte = new byte[1024];
-            //msgByte = Encoding.Default.GetBytes(message);
-            //client.GetStream().Write(msgByte, 0, msgByte.Length);
-            //sentMsgBag.Add(DateTime.Now.ToString("[yyyy-MM-dd hh:mm:ss]\n " + message));
+            byte[] msgByte = new byte[1024];
+            msgByte = Encoding.Default.GetBytes(message);
+            client.GetStream().Write(msgByte, 0, msgByte.Length);
+            sentMsgBag.Add(DateTime.Now.ToString("[yyyy-MM-dd hh:mm:ss]\n " + message));
             #region XMLFormat
             /*
  * <?xml version="1.0" encoding="utf-8"?>
@@ -310,8 +313,8 @@ namespace MiniProject_Client
                 byte[] receiveByte = new byte[1024];
                 client.GetStream().Read(receiveByte, 0, receiveByte.Length);
                 recvMessage = Encoding.Default.GetString(receiveByte, 0, receiveByte.Length);
-                //Console.Clear();
-                //Console.WriteLine(recvMessage);
+                Console.Clear();
+                Console.WriteLine(recvMessage);
                 //Console.ReadKey();
                 #region XmlParsing
                 XmlDocument doc = new XmlDocument();
@@ -322,11 +325,16 @@ namespace MiniProject_Client
                 {
                     switch (elem.InnerText)
                     {
-                        case "StudentsList":
+                        case "Students List":
                             {
-                                foreach (var item in elem.ChildNodes)
+                                XmlNodeList xnl = doc.GetElementsByTagName("Student");
+                                foreach (XmlNode item in xnl)
                                 {
-                                    Console.WriteLine(elem.Name + ": " + elem.InnerText);
+                                    foreach(XmlNode childNodes in item.ChildNodes)
+                                    {
+                                        Console.WriteLine(childNodes.Name + ": " + childNodes.InnerText);
+                                    }
+                                    
                                 }
                                 Console.ReadKey();
                                 break;
