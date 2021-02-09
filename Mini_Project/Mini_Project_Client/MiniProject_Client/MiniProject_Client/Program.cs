@@ -45,7 +45,7 @@ namespace MiniProject_Client
             Console.WriteLine("Port");
             string port = Console.ReadLine();
 
-            Client myClient = new Client(ip, port);
+            m_Client myClient = new m_Client(ip, port);
 
         }
     }
