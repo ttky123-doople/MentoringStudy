@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Sockets;
 using System.Xml;
+using System.Xml.Serialization;
 using System.Net;
 using System.Threading;
 using System.Collections.Concurrent;
@@ -14,14 +15,14 @@ namespace MiniProject_Client
         TcpClient client = null;
         string ServerIp = "";
         string selfIp = "";
-        string inputName="";
-        string inputPhone="";
-        string inputNum="";
+        string inputName = "";
+        string inputPhone = "";
+        string inputNum = "";
         Thread receiveThread = null;
         ConcurrentBag<string> sentMsgBag;
         ConcurrentBag<string> rcvMsgBag;
         string port;
-        public Client(string ip, string port )
+        public Client(string ip, string port)
         {
             receiveThread = new Thread(ReceiveMessage);
             client = new TcpClient();
@@ -34,12 +35,10 @@ namespace MiniProject_Client
         }
         public void Run()
         {
-            receiveThread = new Thread(ReceiveMessage);
+            //receiveThread = new Thread(ReceiveMessage);
             selfIp = GetSelfIP();
             while (true)
             {
-                Console.ReadKey();
-                Console.Clear();
                 Console.WriteLine("==========MiniProject_Client==========");
                 Console.WriteLine("1.서버연결");
                 Console.WriteLine("2.Message 보내기");
@@ -47,7 +46,7 @@ namespace MiniProject_Client
                 Console.WriteLine("4.받은 Message확인");
                 Console.WriteLine("0.종료");
                 Console.WriteLine("==============================");
-                
+
 
                 string key = Console.ReadLine();
                 int order = 0;
@@ -55,11 +54,6 @@ namespace MiniProject_Client
                 {
                     switch (order)
                     {
-                        //1:연결
-                        //2:메세지 보내기
-                        //3:보낸 메세지 확인
-                        //4:받은 메세지 확인(필요여부 생각)
-                        //5:연결 종료
                         case 1:
                             {
                                 if (client != null)
@@ -106,16 +100,16 @@ namespace MiniProject_Client
 </Client>
 <Content>
      <Command>" + command + @"</Command>
-     <Data>"+@"
+     <Data>" + @"
           <Student>
              <Number>" + inputNum + @"</Number>
-             <Phone>"+ inputPhone + @"</Phone>
+             <Phone>" + inputPhone + @"</Phone>
              <Name>" + inputName + @"</Name>
           </Student>
      </Data>
 </Content>
 </Root>";
-          
+
             Console.WriteLine("==========Service==========");
             Console.WriteLine("1.Create");
             Console.WriteLine("2.Read");
@@ -135,14 +129,20 @@ namespace MiniProject_Client
                         }
                     case 1:
                         {
+                            Student tmp = new Student();
                             command = "Create";
                             Console.Write("Name: ");
-                            inputName = Console.ReadLine();
+                            tmp.Name = Console.ReadLine();
                             Console.Write("Phone: ");
-                            inputPhone = Console.ReadLine();
+                            tmp.Phone = Console.ReadLine();
                             Console.Write("Number: ");
-                            inputNum = Console.ReadLine();
-                            
+                            tmp.Number = Console.ReadLine();
+                            XmlSerializer xs = new XmlSerializer(typeof(Student));
+
+
+                            xs.Serialize(client.GetStream(), tmp);
+                            client.GetStream().Flush();
+
                             message = @"<?xml version=""1.0"" encoding=""utf - 8""?>
 <Root>
 <Client>
@@ -160,6 +160,7 @@ namespace MiniProject_Client
      </Data>
 </Content>
 </Root>";
+
                             break;
                         }
                     case 2:
@@ -189,7 +190,7 @@ namespace MiniProject_Client
                             inputName = Console.ReadLine();
                             Console.Write("Phone: ");
                             inputPhone = Console.ReadLine();
-                            
+
                             message = @"<?xml version=""1.0"" encoding=""utf - 8""?>
 <Root>
 <Client>
@@ -240,10 +241,10 @@ namespace MiniProject_Client
                 return;
             }
 
-            byte[] msgByte = new byte[1024];
-            msgByte = Encoding.Default.GetBytes(message);
-            client.GetStream().Write(msgByte, 0, msgByte.Length);
-            sentMsgBag.Add(DateTime.Now.ToString("[yyyy-MM-dd hh:mm:ss]\n " + message));
+            //byte[] msgByte = new byte[1024];
+            //msgByte = Encoding.Default.GetBytes(message);
+            //client.GetStream().Write(msgByte, 0, msgByte.Length);
+            //sentMsgBag.Add(DateTime.Now.ToString("[yyyy-MM-dd hh:mm:ss]\n " + message));
             #region XMLFormat
             /*
  * <?xml version="1.0" encoding="utf-8"?>
@@ -260,7 +261,8 @@ namespace MiniProject_Client
  <Name>Park</Name>
 </strudent>
 </data>
-</Content>*/
+</Content>
+</xml>*/
             //client.GetStream().Write(); 
             #endregion
 
@@ -286,7 +288,7 @@ namespace MiniProject_Client
             client = new TcpClient();
             try
             {
-                
+
                 client.Connect(IPAddress.Parse(ServerIp), int.Parse(this.port));
             }
             catch (Exception e)
@@ -308,23 +310,26 @@ namespace MiniProject_Client
                 byte[] receiveByte = new byte[1024];
                 client.GetStream().Read(receiveByte, 0, receiveByte.Length);
                 recvMessage = Encoding.Default.GetString(receiveByte, 0, receiveByte.Length);
+                //Console.Clear();
+                //Console.WriteLine(recvMessage);
+                //Console.ReadKey();
                 #region XmlParsing
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(recvMessage);
                 XmlNodeList xnList = doc.GetElementsByTagName("Response");
                 rcvMsgBag.Add(DateTime.Now.ToString("[yyyy-MM-dd hh:mm:ss]\n " + recvMessage));
-                foreach(XmlNode elem in xnList)
+                foreach (XmlNode elem in xnList)
                 {
-                    switch(elem.InnerText)
+                    switch (elem.InnerText)
                     {
-                        case "StudentsList": 
+                        case "StudentsList":
                             {
-                                foreach(var item in elem.ChildNodes)
+                                foreach (var item in elem.ChildNodes)
                                 {
                                     Console.WriteLine(elem.Name + ": " + elem.InnerText);
                                 }
                                 Console.ReadKey();
-                                break; 
+                                break;
                             }
                         default:
                             {
@@ -346,8 +351,8 @@ namespace MiniProject_Client
                 Console.ReadKey();
                 return;
             }
-                
-            foreach(var elem in rcvMsgBag)
+
+            foreach (var elem in rcvMsgBag)
             {
                 Console.WriteLine(elem);
                 Console.WriteLine();
