@@ -11,3 +11,16 @@ C:\Users\ttky3\Documents\git\MentoringStudy\Mini_Project\Mini_Project_Server\Min
 C:\Users\ttky3\Documents\git\MentoringStudy\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.dll
 C:\Users\ttky3\Documents\git\MentoringStudy\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.pdb
 C:\Users\ttky3\Documents\git\MentoringStudy\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.genruntimeconfig.cache
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.exe
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.deps.json
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.runtimeconfig.json
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.runtimeconfig.dev.json
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.dll
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\bin\Debug\netcoreapp3.1\Mini_Project.pdb
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.csprojAssemblyReference.cache
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.AssemblyInfoInputs.cache
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.AssemblyInfo.cs
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.csproj.CoreCompileInputs.cache
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.dll
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.pdb
+C:\workspace\Mini_Pro\Mini_Project\Mini_Project_Server\Mini_Project\Mini_Project\obj\Debug\netcoreapp3.1\Mini_Project.genruntimeconfig.cache

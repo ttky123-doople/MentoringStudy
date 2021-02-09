@@ -26,11 +26,9 @@ namespace ServerXmlNs
         string phoneNum;
         string studentName;
         Command commandExe;
-        ResponseMsg.Root rootResponseMsg;
         
-        public ServerXml() { commandExe = new Command();
-            rootResponseMsg = new ResponseMsg.Root();
-        }
+        
+        public ServerXml() { commandExe = new Command();}
 
         public void DataParsing(RequestMsg.Root data)
         {
@@ -85,6 +83,7 @@ namespace ServerXmlNs
                     break;
             }
 
+            ResponseMsg.Root rootResponseMsg = new ResponseMsg.Root(); ;
             rootResponseMsg.response = sendData;
             XmlSerializer serializer = new XmlSerializer(typeof(ResponseMsg.Root));
             serializer.Serialize(networkStream, rootResponseMsg);

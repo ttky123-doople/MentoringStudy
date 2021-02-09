@@ -14,6 +14,7 @@ namespace TxtReadWriteNs
             string[] lines = File.ReadAllLines(currentDirectory + "/Student.txt");
             string[] tempWords = new string[3];
             int count = 0;
+            students.Clear();
             try
             {
                 foreach (string line in lines)
