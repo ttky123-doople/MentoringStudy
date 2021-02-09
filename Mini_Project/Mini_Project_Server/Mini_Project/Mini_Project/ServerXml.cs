@@ -84,7 +84,7 @@ namespace ServerXmlNs
             }
 
             ResponseMsg.Root rootResponseMsg = new ResponseMsg.Root(); ;
-            rootResponseMsg.response = sendData;
+            rootResponseMsg.Response = sendData;
             XmlSerializer serializer = new XmlSerializer(typeof(ResponseMsg.Root));
             serializer.Serialize(networkStream, rootResponseMsg);
             Console.WriteLine("ResponseXml() Success");
