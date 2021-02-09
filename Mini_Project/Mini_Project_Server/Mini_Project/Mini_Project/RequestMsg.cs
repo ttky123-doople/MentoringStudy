@@ -63,6 +63,4 @@ namespace RequestMsg
 			Content = new Content();
 		}
 	}
-
-
 }
